@@ -1,0 +1,303 @@
+
+
+
+import * as functions from 'firebase-functions';
+
+import * as admin from 'firebase-admin';
+var firebaseConfig = {
+    apiKey: "AIzaSyAqXeoD6HuFomsSkpfGHyl7EwUKNUvraGk",
+    authDomain: "actions-3bc0b.firebaseapp.com",
+    databaseURL: "https://actions-3bc0b.firebaseio.com",
+    projectId: "actions-3bc0b",
+    storageBucket: "actions-3bc0b.appspot.com",
+    messagingSenderId: "318056741519",
+    appId: "1:318056741519:web:6fa6cb1bc07ef43e064efa"
+  };
+  // Initialize Firebase
+  admin.initializeApp(firebaseConfig);
+
+
+
+
+
+import {dialogflow,SignIn,SimpleResponse,Button,BasicCard,Image,Permission,} from 'actions-on-google'
+
+var database = admin.database();
+
+
+const app = dialogflow({debug:true,
+    ordersv3: true,        
+});
+
+var nam;
+
+app.intent('Xtreme160r',(conv,params)=>{
+      nam = params.bikename;
+      var FirebaseRef=database.ref();
+      FirebaseRef.child('bike').set(nam);
+      
+    conv.ask(new SimpleResponse({
+        speech:'The description about Xtreme 160 R',
+    }));
+    conv.ask(new BasicCard({
+        title:'Xtreme160r',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'N',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://actions-3bc0b.web.app',
+
+        }),
+    }));
+    
+
+    conv.ask(new SimpleResponse({
+        speech:'Do you want the features of Xtreme160r to be displayed',
+        text:'Do you want the features of Xtreme160r to be displayed',
+
+        }));
+   
+    });
+
+
+
+
+app.intent('Xpulse 200',(conv,params)=>{
+    conv.ask(new SimpleResponse({
+        speech:'About Xpulse 200',
+        text:'About Xpulse 200',
+    }));
+    conv.ask(new BasicCard({
+        title:'Xpulse 200',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'X',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/xpulse200/',
+
+        }),
+    }));
+    
+   
+
+
+    
+
+
+
+ });
+
+
+
+ app.intent('Passion Pro',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Passion Pro is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Passion Pro is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Passion Pro',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'p',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/the-bike/passion-pro-bs6-56.html',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+
+
+ app.intent('Splendor Ismart',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Splendor Ismart is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Splendor Ismart is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Splendor Ismart',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'I',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/splendor-ismart-bsvi/',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+
+
+ app.intent('Glamour',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Glamour is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Glamour is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Glamour',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'G',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/the-bike/glamour-bs6-81.html',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+
+
+
+ app.intent('Splendor+',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Splendor plus is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Splendor+ is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Splendor+',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'S',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/the-bike/splendor-bs6-98.html',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+ 
+
+ app.intent('Deluxe',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'HF-Deluxe is a bike manufactured by Hero.Click on the card for more details ',
+        text:'HF-Deluxe is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'HF-Deluxe',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'D',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/the-bike/hf-deluxe-bs6-97.html',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+
+
+ app.intent('Super Splendor',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Super Splendor is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Super Splendor is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Super Splendor',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'Su',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/the-bike/super-splendor-bs6-101.html',
+
+        }),
+    }));
+
+
+    
+
+
+
+ });
+ 
+
+ app.intent('Xpulse200T',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Xpulse two hundred T is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Xpulse200T is a bike manufactured by Hero.Click on the card for more details',
+    }));
+    conv.ask(new BasicCard({
+        title:'Xpulse200T',
+        image: new Image({
+            url:'https://images.app.goo.gl/V8Dvt3rZLaS7f7e38',
+            alt:'X2',
+        }),
+        buttons: new Button({
+            title:'Go',
+            url:'https://www.heromotocorp.com/en-in/xpulse200t/',
+
+        }),
+    }));
+
+    
+
+    
+
+
+
+ });
+
+ app.intent('sign in',(conv)=>{
+    conv.ask(new SimpleResponse({
+        speech:'Xpulse two hundred T is a bike manufactured by Hero.Click on the card for more details ',
+        text:'Xpulse200T is a bike manufactured by Hero.Click on the card for more details',
+    }));
+   
+})
+app.intent('Order',(conv,params)=>{
+    var parts=params.part;
+    var count=params.number;
+    var data={
+        partname:parts,
+        quantity:count,
+    }
+    var FirebaseRef=database.ref('orders');
+    FirebaseRef.push(data);
+
+
+    conv.ask(new SimpleResponse({
+        speech:'Your order has been received ',
+    }));
+
+})
+ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
+ 
